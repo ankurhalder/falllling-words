@@ -46,25 +46,20 @@ const FallingWordsAnimation = () => {
             color: "#333",
             zIndex: 100,
             opacity: 1,
-            textShadow: "1px 1px 2px rgba(0, 0, 0, 0.3)", // Add subtle text shadow
           }}
           initial={{
-            opacity: 0,
-            y: "-10vh", // Start slightly above the top of the screen
-            scale: 0.5, // Start small
+            opacity: 0, // Start invisible
+            y: "-5vh", // Offset initial position slightly above top
           }}
           animate={{
-            y: "100vh",
-            rotate: `${(Math.random() - 0.5) * 360}deg`,
-            scale: 1,
-            opacity: 1,
-            transitionEnd: {
-              opacity: 0, // Fade out at end of animation
-            },
+            y: "100vh", // Move to bottom of screen
+            rotate: `${(Math.random() - 0.5) * 360}deg`, // Random rotation
+            scale: [1, 0.8, 1], // Add a slight bounce effect
+            opacity: [1, 0.5, 1], // Fade in and out slightly
           }}
           transition={{
-            duration: 4 + Math.random() * 3, // Randomize duration
-            ease: "easeOut", // Smooth easing with a gradual slowdown
+            duration: 4 + Math.random() * 2, // Randomize duration
+            ease: "easeInOut", // Smooth easing
             repeat: Infinity,
             repeatType: "mirror",
             delay: Math.random() * 2,

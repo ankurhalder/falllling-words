@@ -1,14 +1,8 @@
-/* App.scss */
-.canvas-container {
-  width: 100vw;
-  height: 100vh;
-  position: relative;
-  overflow: hidden;
+.threedscreen {
+  height: 100dvh;
+  width: 100dvw;
 }
-
-.canvas {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f0f0f0;
+body {
+  margin: 0;
+  padding: 0;
 }

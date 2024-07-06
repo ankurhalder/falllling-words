@@ -2,7 +2,28 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const FallingWordsAnimation = () => {
-  const words = ["Hello", "World", "Framer", "Motion", "Animation"];
+  const words = [
+    "Hello",
+    "World",
+    "Framer",
+    "Motion",
+    "Animation",
+    "React",
+    "JavaScript",
+    "Web",
+    "Developer",
+    "Code",
+    "Design",
+    "UI/UX",
+    "OpenAI",
+    "Technology",
+    "Innovation",
+    "Creative",
+    "Engineer",
+    "Frontend",
+    "Backend",
+    "Full-stack",
+  ];
 
   return (
     <div
@@ -19,24 +40,29 @@ const FallingWordsAnimation = () => {
           style={{
             position: "absolute",
             top: 0,
-            left: `${Math.random() * 100}vw`, // Randomize initial position horizontally
-            fontSize: `${1 + Math.random() * 2}rem`, // Randomize font size
+            left: `${Math.random() * 100}vw`,
+            fontSize: `${1 + Math.random() * 2}rem`,
             fontWeight: "bold",
             color: "#333",
             zIndex: 100,
+            filter: "blur(1px)", // Add a slight blur effect
+            opacity: 1,
           }}
           animate={{
             top: "100vh",
-            rotate: `${(Math.random() - 0.5) * 20}deg`, // Randomize rotation
-            scale: 1, // Ensure each word maintains its original scale
+            y: (custom) => `${100 + custom * 50}vh`, // Adjust based on custom prop for parallax effect
+            rotate: `${(Math.random() - 0.5) * 20}deg`,
+            scale: 1,
+            opacity: 0, // Fade out
           }}
           transition={{
-            duration: 3 + Math.random() * 3, // Randomize duration
-            ease: "easeInOut", // Smooth easing for natural motion
+            duration: 3 + Math.random() * 3,
+            ease: "easeInOut",
             repeat: Infinity,
-            repeatType: "mirror", // Reverse animation direction on repeat
-            delay: Math.random() * 2, // Random delay before animation starts
+            repeatType: "mirror",
+            delay: Math.random() * 2,
           }}
+          custom={Math.random() * 2} // Custom prop for parallax effect
         >
           {word}
         </motion.span>

@@ -45,25 +45,24 @@ const FallingWordsAnimation = () => {
             fontWeight: "bold",
             color: "#333",
             zIndex: 100,
+            filter: "blur(1px)", // Add a slight blur effect
             opacity: 1,
           }}
-          initial={{
-            opacity: 0, // Start invisible
-            y: "-5vh", // Offset initial position slightly above top
-          }}
           animate={{
-            y: "100vh", // Move to bottom of screen
-            rotate: `${(Math.random() - 0.5) * 360}deg`, // Random rotation
-            scale: [1, 0.8, 1], // Add a slight bounce effect
-            opacity: [1, 0.5, 1], // Fade in and out slightly
+            top: "100vh",
+            y: (custom) => `${100 + custom * 50}vh`, // Adjust based on custom prop for parallax effect
+            rotate: `${(Math.random() - 0.5) * 20}deg`,
+            scale: 1,
+            opacity: 0, // Fade out
           }}
           transition={{
-            duration: 4 + Math.random() * 2, // Randomize duration
-            ease: "easeInOut", // Smooth easing
+            duration: 3 + Math.random() * 3,
+            ease: "easeInOut",
             repeat: Infinity,
             repeatType: "mirror",
             delay: Math.random() * 2,
           }}
+          custom={Math.random() * 2} // Custom prop for parallax effect
         >
           {word}
         </motion.span>

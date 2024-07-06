@@ -41,6 +41,9 @@ const FallingWordsAnimation = () => {
   const getRandomFontFamily = () =>
     fontFamilies[Math.floor(Math.random() * fontFamilies.length)];
 
+  // Function to generate random rotation angle between -10deg and 10deg
+  const getRandomRotation = () => `${(Math.random() - 0.5) * 20}deg`;
+
   return (
     <div
       style={{
@@ -68,6 +71,7 @@ const FallingWordsAnimation = () => {
             opacity: 0, // Start with opacity 0
             rotateX: -90, // Rotate around X-axis to make it 3D
             scale: 0.5, // Start with a smaller scale
+            rotateZ: getRandomRotation(), // Random initial rotation
           }}
           animate={{
             top: "100vh",
@@ -75,6 +79,7 @@ const FallingWordsAnimation = () => {
             rotateX: 0, // Rotate back to normal
             scale: 1, // Return to normal scale
             opacity: 1, // Fade in
+            rotateZ: getRandomRotation(), // Randomize rotation during animation
           }}
           transition={{
             duration: 3 + Math.random() * 3,

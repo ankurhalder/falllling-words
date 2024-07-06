@@ -3,26 +3,27 @@ import { motion } from "framer-motion";
 
 const FallingWordsAnimation = () => {
   const words = [
-    "Hello",
-    "World",
-    "Framer",
-    "Motion",
-    "Animation",
-    "React",
-    "JavaScript",
-    "Web",
-    "Developer",
-    "Code",
-    "Design",
-    "UI/UX",
-    "OpenAI",
-    "Technology",
-    "Innovation",
-    "Creative",
-    "Engineer",
-    "Frontend",
-    "Backend",
-    "Full-stack",
+    "Ankur Halder",
+    "ankur",
+    "halder",
+    "Software Developer",
+    "Full Stack Developer",
+    "MERN Stack Developer",
+    "Django Developer",
+    "Python Developer",
+    "JavaScript Developer",
+    "Next.js Developer",
+    "Open Source Contributor",
+    "python",
+    "github",
+    "eduversa",
+    "adcomsys",
+    "uem",
+    "kolkata",
+    "development",
+    "react",
+    "certificate",
+    "skills",
   ];
 
   return (
@@ -45,15 +46,19 @@ const FallingWordsAnimation = () => {
             fontWeight: "bold",
             color: "#333",
             zIndex: 100,
-            filter: "blur(1px)", // Add a slight blur effect
-            opacity: 1,
+            perspective: "1000px", // Add perspective for 3D effect
+          }}
+          initial={{
+            opacity: 0, // Start with opacity 0
+            rotateX: -90, // Rotate around X-axis to make it 3D
+            scale: 0.5, // Start with a smaller scale
           }}
           animate={{
             top: "100vh",
             y: (custom) => `${100 + custom * 50}vh`, // Adjust based on custom prop for parallax effect
-            rotate: `${(Math.random() - 0.5) * 20}deg`,
-            scale: 1,
-            opacity: 0, // Fade out
+            rotateX: 0, // Rotate back to normal
+            scale: 1, // Return to normal scale
+            opacity: 1, // Fade in
           }}
           transition={{
             duration: 3 + Math.random() * 3,

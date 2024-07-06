@@ -1,7 +1,9 @@
+import FallingWords from "./FallingWords";
+import "./App.scss";
 function App() {
   return (
-    <div>
-      <h1>Ankur Halder</h1>
+    <div className="App">
+      <FallingWords />
     </div>
   );
 }

@@ -1,12 +1,14 @@
-.App {
+/* App.scss */
+.canvas-container {
   width: 100vw;
   height: 100vh;
-  text-align: center;
-  background: black;
-  color: white;
+  position: relative;
+  overflow: hidden;
 }
 
-.falling-word {
-  font-size: 2rem;
-  font-weight: bold;
+.canvas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
 }

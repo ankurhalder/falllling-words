@@ -1,11 +1,11 @@
-import FallingWords from "./FallingWords";
-import "./App.scss";
-function App() {
+import FallingWordsAnimation from "./FallingWordsAnimation";
+
+const App = () => {
   return (
     <div className="App">
-      <FallingWords />
+      <FallingWordsAnimation />
     </div>
   );
-}
+};
 
 export default App;

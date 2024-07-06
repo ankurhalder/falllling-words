@@ -1,4 +1,3 @@
-import React from "react";
 import FallingWordsAnimation from "./FallingWordsAnimation";
 
 const App = () => {

@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 
 const FallingWordsAnimation = () => {
@@ -26,6 +25,22 @@ const FallingWordsAnimation = () => {
     "skills",
   ];
 
+  // Function to generate random font size between 1rem and 3rem
+  const getRandomFontSize = () => `${1 + Math.random() * 2}rem`;
+
+  // Array of font families to choose from
+  const fontFamilies = [
+    "Arial, sans-serif",
+    "Roboto, sans-serif",
+    "Helvetica, sans-serif",
+    "Times New Roman, serif",
+    "Courier New, monospace",
+  ];
+
+  // Function to get a random font family
+  const getRandomFontFamily = () =>
+    fontFamilies[Math.floor(Math.random() * fontFamilies.length)];
+
   return (
     <div
       style={{
@@ -42,8 +57,9 @@ const FallingWordsAnimation = () => {
             position: "absolute",
             top: 0,
             left: `${Math.random() * 100}vw`,
-            fontSize: `${1 + Math.random() * 2}rem`,
+            fontSize: getRandomFontSize(), // Random font size
             fontWeight: "bold",
+            fontFamily: getRandomFontFamily(), // Random font family
             color: "#333",
             zIndex: 100,
             perspective: "1000px", // Add perspective for 3D effect

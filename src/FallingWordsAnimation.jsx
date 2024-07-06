@@ -64,13 +64,11 @@ const FallingWordsAnimation = () => {
             fontWeight: "bold",
             fontFamily: getRandomFontFamily(), // Random font family
             color: "#333",
-            zIndex: 100,
-            perspective: "1000px", // Add perspective for 3D effect
           }}
           initial={{
             opacity: 0, // Start with opacity 0
-            rotateX: -90, // Rotate around X-axis to make it 3D
-            scale: 0.5, // Start with a smaller scale
+            rotateX: -90,
+            scale: 0.5,
             rotateZ: getRandomRotation(), // Random initial rotation
           }}
           animate={{

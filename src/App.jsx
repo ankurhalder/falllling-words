@@ -1,13 +1,11 @@
-import ThreeDScene from "./ThreeDScene";
-import { Fragment } from "react";
-import "./App.scss";
+import React from "react";
+import FallingWordsAnimation from "./FallingWordsAnimation";
+
 const App = () => {
   return (
-    <Fragment>
-      <div className="threedscreen">
-        <ThreeDScene />
-      </div>
-    </Fragment>
+    <div className="App">
+      <FallingWordsAnimation />
+    </div>
   );
 };
 
